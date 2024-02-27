@@ -3,7 +3,7 @@ package com.core;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Ex001 {
+public class ex005 {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
