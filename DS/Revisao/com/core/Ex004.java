@@ -11,14 +11,14 @@ public class Ex004 {
 			System.out.println("Deseja calcular a idade uma pessoa?");
 			String userChoice = scan.next();
 			
-			while (!userChoice.equalsIgnoreCase("N√ÉO")) {
+			while (!userChoice.equalsIgnoreCase("N√O")) {
 				System.out.println("Entre com o ano de nascimento: ");
 				int anoNasc = scan.nextInt();
 				
 				System.out.println("Entre com o ano atual: ");
 				int anoAtual = scan.nextInt();
 				
-				System.out.println("Sua idade √©: " + calcularIdade(anoNasc, anoAtual));
+				System.out.println("Sua idade …: " + calcularIdade(anoNasc, anoAtual));
 				
 				System.out.println("Deseja calcular a idade mais uma pessoa?");
 				userChoice = scan.next();
