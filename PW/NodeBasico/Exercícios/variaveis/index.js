@@ -1,7 +1,7 @@
 import inquirer from "inquirer";
 
 //Faça um programa para ler dois valores inteiros A + B e imprima o resultado da expressão (A + B)
-inquirer
+await inquirer
   .prompt([
     {
       message: `Enter the A value: `,
