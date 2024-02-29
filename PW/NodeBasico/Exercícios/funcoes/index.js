@@ -1,10 +1,12 @@
 // Funções
 
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 /*
 Faça um programa que tenha uma função chamada área(), que receba as dimensões de um terreno retangular (largura e comprimento) e mostre a área do terreno
 */
+console.log(chalk.italic(`Exercício de Função`));
 
 function calcularArea(largura, comprimento) {
   return largura * comprimento;
@@ -29,7 +31,6 @@ while (true) {
   if (!executar) {
     break;
   }
-
   await inquirer
     .prompt([
       {
@@ -46,7 +47,8 @@ while (true) {
         comprimento = Number(answers.comprimento);
 
       console.log(
-        `O resultadoi do calculo é: ${calcularArea(largura, comprimento)}`
+        `O resultado do calculo é: ` +
+          chalk.cyan(`${calcularArea(largura, comprimento)}`)
       );
     });
 }

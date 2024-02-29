@@ -1,4 +1,5 @@
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 //IF E ELSE:
 
@@ -16,6 +17,7 @@ A saída do seu programa deve ser também apenas uma linha, contendo uma letra m
 
 Fonte: tirada do neeps academy numero 87, link https://neps.academy/br/exercise/87
 */
+console.log(chalk.italic(`Exercicio de IF/Else/Else if`));
 
 await inquirer
   .prompt([
@@ -33,11 +35,11 @@ await inquirer
     let portaP = Number(answers.p);
 
     if (portaP == 0) {
-      console.log("Porta C");
+      console.log(chalk.cyan("Porta C"));
     } else if (portaR == 0) {
-      console.log("Porta B");
+      console.log(chalk.green("Porta B"));
     } else {
-      console.log("Porta A");
+      console.log(chalk.red("Porta A"));
     }
 
     console.log("Fim do Programa");
@@ -46,12 +48,15 @@ await inquirer
     console.error(error);
   });
 
+console.log(chalk.cyan(`---------------------------------`));
 // Switch-Case
 
 /*
 2- Criar um programa que leia um número correspondente a um mês qualquer (de 1 a 12) e 
 devolva se o referido mês tem 28, 30 ou 31 dias (desconsiderar anos bissextos).
  */
+
+console.log(chalk.italic(`Exercício de Switch-case`));
 await inquirer
   .prompt([
     {
@@ -70,21 +75,21 @@ await inquirer
       case 8:
       case 10:
       case 12:
-        console.log("Tem 31 dias");
+        console.log(chalk.blue("Tem 31 dias"));
         break;
 
       case 4:
       case 6:
       case 9:
       case 11:
-        console.log("Tem 30 dias");
+        console.log(chalk.blue("Tem 30 dias"));
         break;
       case 2:
-        console.log("Tem 28 dias");
+        console.log(chalk.blue("Tem 28 dias"));
         break;
 
       default:
-        console.log("Mês digitado errado.");
+        console.log(chalk.blue("Tem 31 dias"));
     }
 
     console.log("Fim do programa");

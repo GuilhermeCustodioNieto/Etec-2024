@@ -1,6 +1,8 @@
 import inquirer from "inquirer";
+import chalk from "chalk";
 
 // Criar um programa que leia um vetor A com 10 posições de inteiro e imprima na tela um vetor b sendo que cada elemento de B seja o quadrado de A
+console.log(chalk.italic(`Exercício de Vetores`));
 
 let vetorA = new Array();
 
@@ -23,9 +25,9 @@ vetorA.forEach((atual) => {
   vetorB.push(atualCalculado);
 });
 
-console.log("Numeros atualizados: ");
+console.log(chalk.bgGray("Numeros atualizados: "));
 vetorB.forEach((atual) => {
-  console.log(atual);
+  console.log(chalk.blue(atual));
 });
 
 console.log("Fim do programa");

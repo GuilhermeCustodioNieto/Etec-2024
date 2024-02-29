@@ -1,11 +1,11 @@
-export default function area(largura, altura) {
-    return largura * altura;
+export function area(largura, altura) {
+  return largura * altura;
 }
 
-export default function perimetro(largura, altura) {
-    return 2 * (largura + altura)
+export function perimetro(largura, altura) {
+  return 2 * (largura + altura);
 }
 
-export default function diagonal(largura, altura) {
-    Math.sqrt(largura * largura + altura + altura)
+export function diagonal(largura, altura) {
+  return Math.sqrt(largura * largura + altura + altura);
 }
