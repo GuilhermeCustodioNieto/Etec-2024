@@ -52,3 +52,29 @@ while (resposta != number) {
 }
 
 // Do While
+//Crie um programa que simule um jogo de dados simples. O jogo deve solicitar ao jogador que jogue um dado de 6 lados. Se o jogador tirar um número maior do que 4, ele ganha. Caso contrário, ele perde. O programa deve continuar permitindo que o jogador jogue até que ele decida parar ou até que ele ganhe.
+
+const numberChoiced = Math.floor(Math.random() * 6);
+let continuarJogando = true;
+
+do {
+  await inquirer
+    .prompt([
+      {
+        message: "Escreva sua senha: ",
+        name: "number",
+      },
+    ])
+    .then((answers) => {
+      let numberInput = Number(answers.number);
+      if (numberInput == numberChoiced) {
+        console.log("Acertou!");
+        continuarJogando = false;
+      } else {
+        console.log("Errou");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+} while (continuarJogando);
