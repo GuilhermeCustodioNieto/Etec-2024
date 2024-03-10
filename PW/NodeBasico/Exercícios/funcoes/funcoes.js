@@ -50,6 +50,9 @@ while (true) {
         `O resultado do calculo é: ` +
           chalk.cyan(`${calcularArea(largura, comprimento)}`)
       );
+    })
+    .catch((error) => {
+      console.log(error);
     });
 }
 
