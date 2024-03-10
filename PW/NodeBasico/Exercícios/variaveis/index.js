@@ -23,3 +23,42 @@ await inquirer
   .catch((error) => {
     console.log(error);
   });
+
+console.log(chalk.italic(`Exercício de Constantes`));
+// Calcular e apresentar a área de um circulo de acordo com seu raio
+
+const PI = 3.14;
+
+await inquirer
+  .prompt([
+    {
+      message: `Enter the circle radius: `,
+      name: `radius`,
+    },
+  ])
+  .then((answers) => {
+    let radius = Number(answers.radius);
+    let area = PI * (radius * radius);
+
+    console.log(`The area of circle is: ${chalk.bgBlue(area)}`);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+//Ler o nome de uma pessoa e apresentar fora do escopo do then
+var name = "";
+await inquirer
+  .prompt([
+    {
+      message: `Enter your name: `,
+      name: `name`,
+    },
+  ])
+  .then((answers) => {
+    name = answers.name;
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+console.log(`Your name is ${chalk.bgBlue(name)}`);
