@@ -1,0 +1,66 @@
+CREATE DATABASE db_estoque
+
+CREATE TABLE tbFabricante (
+    codFabricante INTEGER NOT NULL IDENTITY(1,1),
+    nomeFabricante VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY(codFabricante)
+)
+
+CREATE TABLE tbFornecedor (
+    codFornecedor INTEGER NOT NULL IDENTITY(1,1),
+    nomeFornecedor VARCHAR(255) NOT NULL,
+    contatoFornecedor VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY(codFornecedor)
+)
+
+CREATE TABLE tbProduto (
+    codProduto INTEGER NOT NULL IDENTITY(1,1),
+    descricaoProduto VARCHAR (255) NOT NULL,
+    valorProduto FLOAT NOT NULL,
+    quantidadeProduto INTEGER NOT NULL,
+    codFabricante INTEGER NOT NULL,
+    codFornecedor INTEGER NOT NULL,
+
+    FOREIGN KEY (codFabricante) REFERENCES tbFabricante(codFabricante),
+    FOREIGN KEY (codFornecedor) REFERENCES tbFornecedor(codFornecedor),
+
+    PRIMARY KEY(codProduto)
+)
+
+CREATE TABLE tbCliente (
+    codCliente INTEGER NOT NULL IDENTITY(1,1),
+    nomeCliente VARCHAR(255) NOT NULL,
+    cpfCliente VARCHAR(255) NOT NULL,
+    emailCliente VARCHAR(255) NOT NULL,
+    sexoCliente VARCHAR(255) NOT NULL,
+    dataNascimentoCliente DATE NOT NULL,
+
+    PRIMARY KEY(codCliente)
+)
+
+CREATE TABLE tbVenda( 
+    codVenda INTEGER NOT NULL IDENTITY(1,1),
+    dataVenda DATE NOT NULL,
+    valorTotalVenda FLOAT NOT NULL,
+    codCliente INTEGER NOT NULL,
+
+    FOREIGN KEY (codCliente) REFERENCES tbCliente(codCliente),
+
+    PRIMARY KEY(codVenda)
+)
+
+CREATE TABLE tbItensVenda (
+    codItensVenda INTEGER NOT NULL IDENTITY(1,1),
+
+    codVenda INTEGER NOT NULL,
+    codProduto INTEGER NOT NULL,
+    quantidadeitensVenda INTEGER NOT NULL,
+    subTotalItensvenda FLOAT NOT NULL,
+
+    FOREIGN KEY (codVenda) REFERENCES tbVenda(codVenda),
+    FOREIGN KEY (codProduto) REFERENCES tbProduto(codProduto),
+
+    PRIMARY KEY(codItensVenda)
+)
