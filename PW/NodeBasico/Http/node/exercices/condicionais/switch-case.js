@@ -24,9 +24,16 @@ const server = http.createServer((req, res) => {
   setup(req, res);
   const urlInfo = url.parse(req.url, true);
 
+  res.write(`<h1>Quantidade de dias em um mês</h1>`);
+
   let mes = urlInfo.query.mes;
 
   if (!mes) {
+    res.write(`
+    <p>Entre com o número do mês e direi quantos dias esse referido mês tem</p>
+    <br /> 
+  `);
+
     res.end(
       '<form action="" method="get">' +
         '<label for="mes">Entre com o mês</label>' +
@@ -35,6 +42,8 @@ const server = http.createServer((req, res) => {
         "</form>"
     );
   } else {
+    res.write(`<h2>Saída de Dados</h2>`);
+
     mes = Number(mes);
 
     switch (mes) {

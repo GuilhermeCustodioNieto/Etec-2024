@@ -23,8 +23,24 @@ const server = http.createServer((req, res) => {
   setup(req, res);
   const urlInfo = url.parse(req.url, true);
 
+  res.write(`
+  <h1>Jogo de dados</h1>
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/60/60879.png"
+    alt="Imagem de um dado"
+  />
+  `);
+
   do {
     if (!urlInfo.query.number) {
+      res.write(`
+      <h2>Descrição</h2>
+      <p>
+        O programa vai sortear um dado de 6 faces e você deve acertar o número
+        sorteado
+      </p>  
+      `);
+
       res.write(`
         <form action="" method="get">
           <label for="numberInput">Entre com o número que você quer</label>

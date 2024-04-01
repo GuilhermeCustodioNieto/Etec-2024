@@ -21,11 +21,11 @@ function calcularArea(largura, comprimento) {
   return largura * comprimento;
 }
 
-let executar = true;
-
 const server = http.createServer((req, res) => {
   setup(req, res);
   const urlInfo = url.parse(req.url, true);
+
+  res.write(`<h1>Programa de calcular a area de um terreno</h1>`);
 
   let largura = urlInfo.query.largura;
   let altura = urlInfo.query.altura;
@@ -48,7 +48,9 @@ const server = http.createServer((req, res) => {
 
     let area = calcularArea(largura, altura);
 
-    res.end(`<h1> A saida é ${area}`);
+    res.write(`<h2> Saída dos dados do terreno</h2>`);
+
+    res.end(`<h3> A saida é ${area}</h3>`);
   }
 });
 

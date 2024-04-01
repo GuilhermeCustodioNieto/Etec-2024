@@ -38,7 +38,21 @@ http
     let portaP = urlInfo.query.portaP;
     let portaR = urlInfo.query.portaR;
 
+    res.write(`<h1>Portas do Fliper!</h1>`);
+
     if (!portaP && !portaR) {
+      res.write(
+        `Imagine o seguinte cenário: Você tem um fliper com 3 portas: A,B e C, cada uma podendo ser 0/1 (0 = fechado / 1 = aberto), digite qual porta está aberta e qual está fechada e vamos ver onde a bolinha vai cair`
+      );
+
+      res.write(`<br>`);
+
+      res.write(`<strong>imagem do jogo de forma ilustrativa</strong>`);
+
+      res.write(
+        `<img src="https://neps.academy/_ipx/_/https://api.neps.academy/image/667.png">`
+      );
+
       res.end(
         '<form action="get">' +
           '<label for="portaR">Entre com o número da porta R</label>' +
@@ -51,12 +65,14 @@ http
           "</form>"
       );
     } else {
+      res.write(`<h1>A porta que está correta é...</h1>`);
+
       if (portaP == 0) {
-        res.end(`PORTA C`);
+        res.end(`Porta C!`);
       } else if (portaR == 0) {
-        res.end(`PORTA B`);
+        res.end(`Porta B!`);
       } else {
-        res.end(`PORTA A`);
+        res.end(`Porta  A!`);
       }
     }
   })
