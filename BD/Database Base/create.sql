@@ -1,13 +1,13 @@
 CREATE DATABASE db_estoque
 
-CREATE TABLE tbFabricante (
+CREATE TABLE tblFabricante (
     codFabricante INTEGER NOT NULL IDENTITY(1,1),
     nomeFabricante VARCHAR(255) NOT NULL,
 
     PRIMARY KEY(codFabricante)
 )
 
-CREATE TABLE tbFornecedor (
+CREATE TABLE tblFornecedor (
     codFornecedor INTEGER NOT NULL IDENTITY(1,1),
     nomeFornecedor VARCHAR(255) NOT NULL,
     contatoFornecedor VARCHAR(255) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE tbFornecedor (
     PRIMARY KEY(codFornecedor)
 )
 
-CREATE TABLE tbProduto (
+CREATE TABLE tblProduto (
     codProduto INTEGER NOT NULL IDENTITY(1,1),
     descricaoProduto VARCHAR (255) NOT NULL,
     valorProduto FLOAT NOT NULL,
@@ -29,20 +29,20 @@ CREATE TABLE tbProduto (
     PRIMARY KEY(codProduto)
 )
 
-CREATE TABLE tbCliente (
+CREATE TABLE tblCliente (
     codCliente INTEGER NOT NULL IDENTITY(1,1),
     nomeCliente VARCHAR(255) NOT NULL,
     cpfCliente VARCHAR(255) NOT NULL,
     emailCliente VARCHAR(255) NOT NULL,
-    sexoCliente VARCHAR(255) NOT NULL,
-    dataNascimentoCliente DATE NOT NULL,
+    sexoCliente VARCHAR(1) NOT NULL,
+    dataNascimentoCliente DATETIME NOT NULL,
 
     PRIMARY KEY(codCliente)
 )
 
-CREATE TABLE tbVenda( 
+CREATE TABLE tblVenda( 
     codVenda INTEGER NOT NULL IDENTITY(1,1),
-    dataVenda DATE NOT NULL,
+    dataVenda DATETIME NOT NULL,
     valorTotalVenda FLOAT NOT NULL,
     codCliente INTEGER NOT NULL,
 
@@ -51,7 +51,7 @@ CREATE TABLE tbVenda(
     PRIMARY KEY(codVenda)
 )
 
-CREATE TABLE tbItensVenda (
+CREATE TABLE tblItensVenda (
     codItensVenda INTEGER NOT NULL IDENTITY(1,1),
 
     codVenda INTEGER NOT NULL,
