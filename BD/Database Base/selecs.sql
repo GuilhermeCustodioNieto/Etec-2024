@@ -49,7 +49,7 @@ SElECT	SUM(valorTotalVenda) as Valor_Total_Venda, (nomeCliente) as nomes_Cliente
 	GROUP BY nomeCliente
 	ORDER BY nomes_Cliente ASC
 	
-/* Execício 7 */
+/* Execï¿½cio 7 */
 
 SElECT	SUM(valorProduto) as Valor_Total_Produtos, nomeFabricante as fabricante
 	FROM tblProduto
@@ -59,7 +59,7 @@ SElECT	SUM(valorProduto) as Valor_Total_Produtos, nomeFabricante as fabricante
 	GROUP BY nomeFabricante
 	ORDER BY Valor_Total_Produtos DESC
 
-/* Execício 8 */
+/* Execï¿½cio 8 */
 
 SElECT	AVG(valorProduto) as Valor_Total_Produtos, nomeFornecedor as fornecedor
 	FROM tblProduto
@@ -71,12 +71,16 @@ SElECT	AVG(valorProduto) as Valor_Total_Produtos, nomeFornecedor as fornecedor
 
 
 
-/* EXERCICIO 9 */
+/* Listar a soma das vendas agrupadas pelos produtos 9 */
 
-SElECT	AVG(valorProduto) as Valor_Total_Produtos, nomeFornecedor as fornecedor
+SElECT	descricaoProduto as Nome_Produto, SUM(valorTotalVenda) as Soma_Venda 
 	FROM tblProduto
-		INNER JOIN tblFornecedor
-			ON tblProduto.codFornecedor = tblFornecedor.codFornecedor
+		INNER JOIN tblItensVenda
+			ON tblItensVenda.codProduto= tblProduto.codProduto
+			INNER JOIN  tblVenda
+				ON tblItensVenda.codItensVenda = tblVenda.codVenda
 
-	GROUP BY nomeFornecedor
-	ORDER BY Valor_Total_Produtos DESC
+	GROUP BY tblProduto.descricaoProduto
+	ORDER BY descricaoProduto DESC
+
+
