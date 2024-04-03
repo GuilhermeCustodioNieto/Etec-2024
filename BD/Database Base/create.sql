@@ -23,8 +23,8 @@ CREATE TABLE tblProduto (
     codFabricante INTEGER NOT NULL,
     codFornecedor INTEGER NOT NULL,
 
-    FOREIGN KEY (codFabricante) REFERENCES tbFabricante(codFabricante),
-    FOREIGN KEY (codFornecedor) REFERENCES tbFornecedor(codFornecedor),
+    FOREIGN KEY (codFabricante) REFERENCES tblFabricante(codFabricante),
+    FOREIGN KEY (codFornecedor) REFERENCES tblFornecedor(codFornecedor),
 
     PRIMARY KEY(codProduto)
 )
@@ -35,7 +35,7 @@ CREATE TABLE tblCliente (
     cpfCliente VARCHAR(255) NOT NULL,
     emailCliente VARCHAR(255) NOT NULL,
     sexoCliente VARCHAR(1) NOT NULL,
-    dataNascimentoCliente DATETIME NOT NULL,
+    dataNascimentoCliente DATE NOT NULL,
 
     PRIMARY KEY(codCliente)
 )
@@ -46,7 +46,7 @@ CREATE TABLE tblVenda(
     valorTotalVenda FLOAT NOT NULL,
     codCliente INTEGER NOT NULL,
 
-    FOREIGN KEY (codCliente) REFERENCES tbCliente(codCliente),
+    FOREIGN KEY (codCliente) REFERENCES tblCliente(codCliente),
 
     PRIMARY KEY(codVenda)
 )
@@ -59,8 +59,10 @@ CREATE TABLE tblItensVenda (
     quantidadeitensVenda INTEGER NOT NULL,
     subTotalItensvenda FLOAT NOT NULL,
 
-    FOREIGN KEY (codVenda) REFERENCES tbVenda(codVenda),
-    FOREIGN KEY (codProduto) REFERENCES tbProduto(codProduto),
+    FOREIGN KEY (codVenda) REFERENCES tblVenda(codVenda),
+    FOREIGN KEY (codProduto) REFERENCES tblProduto(codProduto),
 
     PRIMARY KEY(codItensVenda)
 )
+
+DROP DATABASE db_estoque
