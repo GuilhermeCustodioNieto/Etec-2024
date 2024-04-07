@@ -1,5 +1,5 @@
 /* Exercicio A */
-SELECT descricaoProduto, tblFabricante.nomeFabricante
+SELECT descricaoProduto 'Descrição do Produto', tblFabricante.nomeFabricante 'Nome do Fabricante'
 FROM tblProduto
     INNER JOIN tblFabricante
         ON tblProduto.codFabricante = tblFabricante.codFabricante
@@ -7,14 +7,16 @@ FROM tblProduto
 	ORDER BY tblProduto.descricaoProduto ASC
 
 	/* Exercicio B */
-SELECT tblProduto.descricaoProduto, tblFornecedor.nomeFornecedor
+SELECT tblProduto.descricaoProduto 'Descrição do Produto', tblFornecedor.nomeFornecedor 'Nome do Fornecedor'
 	FROM tblProduto
 		INNER JOIN tblFornecedor
 			ON tblProduto.codFornecedor = tblFornecedor.codFornecedor
 
 	ORDER BY tblFornecedor.nomeFornecedor ASC
+
 	/*  Exercicio C */
-SElECT SUM(tblProduto.quantidadeProduto) as Quantidade_Produtos, tblFabricante.nomeFabricante  
+
+SElECT SUM(tblProduto.quantidadeProduto) as 'Quantidade de Produtos', tblFabricante.nomeFabricante 'Nome do Fabricante'
 	FROM tblProduto 
 		INNER JOIN tblFabricante
 			ON tblProduto.codFabricante = tblFabricante.codFabricante
@@ -22,9 +24,9 @@ SElECT SUM(tblProduto.quantidadeProduto) as Quantidade_Produtos, tblFabricante.n
 	GROUP BY tblFabricante.nomeFabricante
 	ORDER BY tblFabricante.nomeFabricante DESC	
 
-	/* Exercicio 4 */
+	/* Exercicio D */
 
-SElECT SUM(tblVenda.valorTotalVenda) as Valor_Total, tblCliente.nomeCliente 
+SElECT SUM(tblVenda.valorTotalVenda) as 'Valor Total', tblCliente.nomeCliente 'Nome do Cliente'
 FROM tblVenda
 	INNER JOIN tblCliente
 		ON tblVenda.codCliente = tblCliente.codCliente
@@ -32,9 +34,9 @@ FROM tblVenda
 	GROUP BY tblCliente.nomeCliente		
 	ORDER BY tblCliente.nomeCliente	 DESC
 
-	/* Exercicio 5 */ 
+	/* Exercicio E */ 
 
-SElECT	AVG(tblProduto.valorProduto) as Valor_Media, nomeFornecedor 
+SElECT	AVG(tblProduto.valorProduto) as Valor_Media, 'Nome do Fornecedor' 
 	FROM tblProduto
 		INNER JOIN tblFornecedor
 			ON tblProduto.codFornecedor = tblFornecedor.codFornecedor
@@ -42,9 +44,9 @@ SElECT	AVG(tblProduto.valorProduto) as Valor_Media, nomeFornecedor
 	GROUP BY tblFornecedor.nomeFornecedor		
 	ORDER BY Valor_Media DESC
 
-/* Exercicio 6 */ 
+/* Exercicio F */ 
 
-SElECT	SUM(tblVenda.valorTotalVenda) as Valor_Total_Venda, (tblCliente.nomeCliente) as nomes_Cliente
+SElECT	SUM(tblVenda.valorTotalVenda) as 'Valor Total de Venda', (tblCliente.nomeCliente) 'Nome Clientes'
 	FROM tblVenda
 		INNER JOIN tblCliente
 			ON tblVenda.codCliente = tblCliente.codCliente
@@ -52,9 +54,9 @@ SElECT	SUM(tblVenda.valorTotalVenda) as Valor_Total_Venda, (tblCliente.nomeClien
 	GROUP BY tblCliente.nomeCliente
 	ORDER BY tblCliente.nomeCliente ASC
 	
-/* Exec�cio 7 */
+/* Exec�cio G */
 
-SElECT	SUM(tblProduto.valorProduto) as Valor_Total_Produtos, tblFabricante.nomeFabricante as fabricante
+SElECT	SUM(tblProduto.valorProduto) as Valor_Total_Produtos, tblFabricante.nomeFabricante 'Fabricante'
 	FROM tblProduto
 		INNER JOIN tblFabricante
 			ON tblProduto.codFabricante = tblFabricante.codFabricante
@@ -62,9 +64,9 @@ SElECT	SUM(tblProduto.valorProduto) as Valor_Total_Produtos, tblFabricante.nomeF
 	GROUP BY tblFabricante.nomeFabricante
 	ORDER BY Valor_Total_Produtos DESC
 
-/* Exec�cio 8 */
+/* Exec�cio H */
 
-SElECT	AVG(tblProduto.valorProduto) as Valor_Total_Produtos, tblFornecedor.nomeFornecedor as fornecedor
+SElECT	AVG(tblProduto.valorProduto) as Valor_Total_Produtos, tblFornecedor.nomeFornecedor 'Fornecedor'
 	FROM tblProduto
 		INNER JOIN tblFornecedor
 			ON tblProduto.codFornecedor = tblFornecedor.codFornecedor
@@ -74,8 +76,8 @@ SElECT	AVG(tblProduto.valorProduto) as Valor_Total_Produtos, tblFornecedor.nomeF
 
 
 
-/* Listar a soma das vendas agrupadas pelos produtos 9 */
-SElECT	tblProduto.descricaoProduto, SUM(tblVenda.valorTotalVenda) as Soma_Venda 
+/* Exercício I */
+SElECT	tblProduto.descricaoProduto, SUM(tblVenda.valorTotalVenda) 'Soma Venda'
 	FROM tblItensVenda 
 		INNER JOIN tblVenda
 			ON tblItensVenda.codVenda= tblVenda.codVenda
@@ -87,8 +89,8 @@ SElECT	tblProduto.descricaoProduto, SUM(tblVenda.valorTotalVenda) as Soma_Venda
 
 
 
-/* Exercício 10 */
-SELECT MAX(tblCliente.nomeCliente) AS Nome_Cliente, SUM(tblVenda.valorTotalVenda) as Total_Venda, MAX(tblVenda.dataVenda) AS Data_Venda
+/* Exercício J */
+SELECT SUM(tblVenda.valorTotalVenda) 'Total Venda', MAX(tblCliente.nomeCliente) 'Nome Cliente', MAX(tblVenda.dataVenda) 'Data Venda'
 FROM tblVenda
 	INNER JOIN tblCliente
 		ON tblCliente.codCliente = tblVenda.codCliente
