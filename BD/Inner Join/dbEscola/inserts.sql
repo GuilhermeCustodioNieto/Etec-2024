@@ -1,7 +1,7 @@
 use dbEscola
 INSERT INTO tbAluno(nomeAluno, dataNascAluno, rgAluno, naturalidadeAluno) VALUES
 ('Paulo Santos', '2000-03-10 00:00:00', '82.282.122-0', 'SP'),
-('Maria da loria', '1999-10-03 00:00:00', '45.233.123-0', 'SP'),
+('Maria da Gloria', '1999-10-03 00:00:00', '45.233.123-0', 'SP'),
 ('Pedro Nogueira da Silva', '1998-04-04 00:00:00', '23.533.211-9', 'SP'),
 ('Gilson Barros Silva', '1995-09-09 00:00:00', '34.221.111-x', 'PE'),
 ('Mariana Barbosa Santos', '2001-10-10 00:00:00', '54.222.122-9', 'RJ'),

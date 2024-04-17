@@ -26,6 +26,8 @@ CREATE TABLE tbTurma(
     codCurso INT NOT NULL,
     horarioTurma SMALLDATETIME NOT NULL,
 
+    FOREIGN KEY(codCurso) REFERENCES tbCurso(codCurso),
+
     PRIMARY KEY(codTurma)
 )
 
@@ -35,6 +37,8 @@ CREATE TABLE tbMatricula(
     codAluno INT NOT NULL,
     codTurma INT NOT NULL,
 
+    FOREIGN KEY(codAluno) REFERENCES tbAluno(codAluno),
+    FOREIGN KEY(codTurma) REFERENCES tbTurma(codTurma),
 
     PRIMARY KEY(codMatrcula)
 )
