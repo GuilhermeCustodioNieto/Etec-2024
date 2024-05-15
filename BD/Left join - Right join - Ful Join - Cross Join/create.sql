@@ -5,7 +5,7 @@ CREATE TABLE tbAutor(
     codAutor INT NOT NULL IDENTITY(1,1),
     nomeAutor VARCHAR(255) NOT NULL,
 
-    PRIMARY KEY(codAautor)
+    PRIMARY KEY(codAutor)
 )
 
 CREATE TABLE tbGenero(
