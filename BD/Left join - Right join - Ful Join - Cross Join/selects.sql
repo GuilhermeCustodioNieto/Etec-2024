@@ -115,4 +115,21 @@ SELECT tbAutor.nomeAutor, tbLivro.nomeLivro FROM tbAutor
 	FULL JOIN tbLivro
 		ON tbLivro.codAutor = tbAutor.codAutor
 
+/* EXERCÍCIO N */
+SELECT tbEditora.nomeEditora, tbLivro.nomeLivro FROM tbEditora
+	CROSS JOIN tbLivro
+		
+	WHERE tbEditora.nomeEditora = 'Ática'
 
+	
+/* EXERCÍCIO O */
+SELECT nomeAutor FROM tbAutor
+	LEFT JOIN tbLivro ON tbAutor.codAutor = tbLivro.codAutor
+		WHERE tbLivro.codLivro IS NULL
+
+/* EXERCÍCIO P */
+SELECT tbGenero.nomeGenero FROM tbGenero
+	LEFT JOIN tbLivro
+		ON tbGenero.codGenero = tbLivro.codGenero
+
+	WHERE tbLivro.codLivro IS NULL
