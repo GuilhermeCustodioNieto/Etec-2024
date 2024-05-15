@@ -2,7 +2,7 @@ CREATE DATABASE dbLivariaBrasileira
 
 USE dbLivariaBrasileira
 CREATE TABLE tbAutor(
-    codAautor INT NOT NULL IDENTITY(1,1),
+    codAutor INT NOT NULL IDENTITY(1,1),
     nomeAutor VARCHAR(255) NOT NULL,
 
     PRIMARY KEY(codAautor)
