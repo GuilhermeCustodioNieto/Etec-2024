@@ -18,10 +18,10 @@ INSERT INTO tbEditora(nomeEditora) VALUES
 ('Melhoramentos'),
 ('Globo'),
 ('Ática'),
-('Comanhia das Letras'),
+('Companhia das Letras'),
 ('Abril')
 
-INSERT INTO tbLivro(nomeLivro, numPaginas, codGenero, codAautor, codEditora) VALUES
+INSERT INTO tbLivro(nomeLivro, numPaginas, codGenero, codAutor, codEditora) VALUES
 ('Budapeste', 176, 2, 4, 1),
 ('O Bicho-da-Seda', 454, 2, 5, 3),
 ('Gabriela, Cravo e Canela', 214, 1, 2, 2),
