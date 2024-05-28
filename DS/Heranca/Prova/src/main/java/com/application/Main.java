@@ -88,7 +88,7 @@ public class Main {
         Revista revista = new Revista(titulo, autor, anoPublicacao, numEdicao, mesPublicado);
 
         System.out.println();
-        System.out.println(revista.exibirDetalhes());
+        System.out.println(revista.exibirDetalhes(incluirMes));
 
 
     }
