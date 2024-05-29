@@ -18,8 +18,33 @@ SELECT nomeCurso, valorCurso FROM tbCurso
 
 --DB Escola de Idiomas: Ex E
 SELECT nomeAluno, nomeCurso FROM tbAluno
-	INNER JOIN tbCurso
-		
-	WHERE valorCurso = (SELECT MAX(valorCurso) FROM tbCurso)
+	INNER JOIN tbMatricula
+		ON tbMatricula.codAluno = tbAluno.codAluno
+
+		INNER JOIN tbTurma
+			ON tbMatricula.codTurma = tbTurma.codTurma
+
+		INNER JOIN tbCurso
+			ON tbCurso.codCurso = tbTurma.codCurso
+
+
+	WHERE tbMatricula.dataMatricula = (SELECT MIN(dataMatricula) FROM tbMatricula)
+
+--DB Escola de Idiomas: Ex F
+SELECT nomeAluno FROM tbAluno
+	INNER JOIN tbMatricula
+		ON tbMatricula.codAluno = tbAluno.codAluno
+
+		INNER JOIN tbTurma
+			ON tbMatricula.codTurma = tbTurma.codTurma
+
+		INNER JOIN tbCurso
+			ON tbCurso.codCurso = tbTurma.codCurso
+
+	WHERE tbMatricula.dataMatricula = (SELECT MAX(dataMatricula) FROM tbMatricula)
+
 
 DROP DATABASE bdEscolaDeIdiomas
+
+SELECT * FROM tbAluno
+SELECT * FROM tbMatricula
