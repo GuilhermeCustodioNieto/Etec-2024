@@ -28,7 +28,7 @@ SELECT nomeAluno, nomeCurso FROM tbAluno
 			ON tbCurso.codCurso = tbTurma.codCurso
 
 
-	WHERE tbMatricula.dataMatricula = (SELECT MIN(dataMatricula) FROM tbMatricula)
+	WHERE tbMatricula.dataMatricula = (SELECT MAX(dataMatricula) FROM tbMatricula)
 
 --DB Escola de Idiomas: Ex F
 SELECT nomeAluno FROM tbAluno
@@ -41,7 +41,9 @@ SELECT nomeAluno FROM tbAluno
 		INNER JOIN tbCurso
 			ON tbCurso.codCurso = tbTurma.codCurso
 
-	WHERE tbMatricula.dataMatricula = (SELECT MAX(dataMatricula) FROM tbMatricula)
+	WHERE tbMatricula.dataMatricula = (SELECT MIN(dataMatricula) FROM tbMatricula)
+
+--DB Escola de Idiomas: Ex G
 
 
 DROP DATABASE bdEscolaDeIdiomas

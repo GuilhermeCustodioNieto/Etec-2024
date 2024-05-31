@@ -7,7 +7,7 @@ INNER JOIN tblFabricante
 WHERE valorProduto = (SELECT MAX(valorProduto) FROM tblProduto)
 
 --dbEstoque - Ex 002
-SELECT descricaoProduto, nomeFabricante FROM tblProduto
+SELECT descricaoProduto, nomeFabricante, valorProduto FROM tblProduto
 INNER JOIN tblFabricante 
 	ON tblProduto.codFabricante = tblFabricante.codFabricante
 
