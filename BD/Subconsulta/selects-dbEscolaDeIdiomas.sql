@@ -55,9 +55,3 @@ SELECT nomeAluno,rgAluno, dataNascAluno FROM tbAluno
 	WHERE tbCurso.nomeCurso = 'Inglês'
 
 
-DROP DATABASE bdEscolaDeIdiomas
-
-SELECT * FROM tbAluno
-SELECT * FROM tbMatricula
-SELECT * FROM tbTurma
-SELECT * FROM tbCurso
