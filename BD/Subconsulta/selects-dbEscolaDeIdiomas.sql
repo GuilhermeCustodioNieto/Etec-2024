@@ -44,9 +44,20 @@ SELECT nomeAluno FROM tbAluno
 	WHERE tbMatricula.dataMatricula = (SELECT MIN(dataMatricula) FROM tbMatricula)
 
 --DB Escola de Idiomas: Ex G
+SELECT nomeAluno,rgAluno, dataNascAluno FROM tbAluno
+	INNER JOIN tbMatricula
+		ON tbMatricula.codAluno = tbAluno.codAluno
+	INNER JOIN tbTurma
+		ON tbTurma.codTurma = tbMatricula.codTurma
+	INNER JOIN tbCurso
+		ON tbCurso.codCurso = tbTurma.codCurso
+
+	WHERE tbCurso.nomeCurso = 'Inglês'
 
 
 DROP DATABASE bdEscolaDeIdiomas
 
 SELECT * FROM tbAluno
 SELECT * FROM tbMatricula
+SELECT * FROM tbTurma
+SELECT * FROM tbCurso
