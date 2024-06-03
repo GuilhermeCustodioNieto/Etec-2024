@@ -1,0 +1,95 @@
+.footerBox{
+    background-color: #ccd0cf;
+}
+
+#footerSection{
+    border-top: 0.3px solid #999;
+    padding: 10px;
+    margin: 0px 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* cards footer */
+
+.contatoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* texto */
+
+.nameContato{
+    font-size: 1.1rem;
+    color: #233745;
+}
+
+.copy{
+    text-align: center;
+    padding: 15px;
+    font-size: 1.0rem;
+}
+
+.return{
+    display: block;
+    text-align: center;
+    color: #233745;
+    font-size: 1.5rem;
+    transition: .5s ease-in-out;
+}
+
+.return:hover{
+    text-shadow: 0 0 10px #233745;
+    transform: translateY(-10px) ;
+}
+
+/* icons */
+
+.contatoBar{
+    padding: 15px;
+    margin: 8px;
+}
+
+.icon{
+    color: #222;
+    font-size: 1.4rem;
+    padding: 10px;
+}
+
+.github{
+    color: #222;
+    transition: 0.5s ease-in-out;
+}
+
+.github:hover{
+    color: #361735;
+    text-shadow: 0 0 10px #6e336c;
+    font-size: 1.6rem;
+}
+
+.facebook{
+    color: #222;
+    transition: 0.5s ease-in-out;
+}
+
+.facebook:hover{
+    color: #3b5998;
+    text-shadow: 0 0 10px #4e82f3;
+    font-size: 1.6rem;
+}
+
+.linkedin{
+    color: #222;
+    transition: 0.5s ease-in-out;
+}
+
+.linkedin:hover{
+    color: #0e76a8;
+    text-shadow: 0 0 10px rgb(130, 169, 254);
+    font-size: 1.6rem;
+}

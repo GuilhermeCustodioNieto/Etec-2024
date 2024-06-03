@@ -1,0 +1,17 @@
+
+.mainNoticia{
+    height: 850px  ;
+    background-color: #ccd0cf;
+    width: 100%;
+}
+
+.imgNoticia5{
+    width: 680px;
+    height: 440px;
+}
+
+
+.text3{
+    grid-row: 3/3;
+    border-bottom: 0px;
+}
