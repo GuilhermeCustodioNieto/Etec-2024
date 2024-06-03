@@ -89,6 +89,7 @@
     text-decoration: none;
     color: #233745;
     transition: 0.5s ease-in-out;
+
 }
 .link:hover > .detail{
     text-shadow: 0 0 3px #3a607a;
