@@ -1,6 +1,7 @@
 
 #headerBox{
     border-bottom: 1.5px #000000 solid;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .navbar{
