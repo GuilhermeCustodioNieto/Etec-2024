@@ -1,45 +1,46 @@
+
 #headerBox{
-    background-color: #ccd0cf;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px 20px;
+    border-bottom: 1.5px #000000 solid;
 }
 
-.logotipo{
-    width: 80px;
-    height: 50px;
+.navbar{
+    margin: 7px 20px;
 }
 
-.logotipoBox{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    width: 30%;
-    border-bottom: 0.3px #999 solid;
-}
-
-.navBox{
+.nav-div{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    padding: 15px;
-    width: 80%;
-    border-bottom: 0.3px #999 solid;
+
+    
+}
+
+
+.header-title{
+    color: #000000;
+    font: bold;
+    font-size: 24px;
+    
+    text-decoration: none;
 }
 
 .navLink{
-    padding: 15px 25px;
-    font-size: 16px;
+    padding: 15px 10px;
+    font-size: 12px;
+    font-weight: 500;
     text-decoration: none;
-    color: #233745; 
+    color: #000000; 
     transition: 0.5s;
+}
+
+.navBar{
+    margin-right: 50px;   
 }
 
 .navLink:hover{
     transform: translateY(-10px) ;
     text-decoration: underline #eee 1px;
-    text-shadow: 0 0 5px #233745;
+    text-shadow: 0 0 5px #aeb1b3;
 }
+

@@ -1,16 +1,16 @@
-.footerBox{
-    background-color: #ccd0cf;
-    
-}
+
 
 #footerSection{
-    border-top: 0.3px solid #999;
-    padding: 10px;
-    margin: 0px 80px;
+    border-top: 1.5px solid #000000;
+    padding: 10px 50px;
+    
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
+
+    
+    
 }
 
 /* cards footer */
@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
+    
 }
 
 /* texto */
@@ -52,8 +52,12 @@
 /* icons */
 
 .contatoBar{
-    padding: 15px;
-    margin: 8px;
+    padding: 10px;
+    
+}
+
+.contatoBar a{
+    text-decoration: none;
 }
 
 .icon{

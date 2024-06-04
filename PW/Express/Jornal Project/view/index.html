@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -32,46 +32,66 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/main.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <!-- HEADER -->
 
     <header id="headerBox">
-      <!-- Logo -->
-      <div class="logotipoBox">
-        <img src="./imagens/logotipo.png" alt="logotipo" class="logotipo" />
-      </div>
-      <!-- Barra de Navegação -->
-      <div class="navBox">
-        <nav class="navBar">
-          <a href="/" class="navLink">Home</a>
-          <a href="#mainBox" class="navLink">Noticias</a>
-          <a href="#footerSection" class="navLink">Contato</a>
-          <a href="#footerSection" class="navLink">Rodapé</a>
-        </nav>
-      </div>
+      <nav class="navbar">
+        <div class="container-fluid general-nav">
+          <a class="header-title" href="/">ETEC NEWS</a>
+
+          <div class="nav-div">
+            <nav class="navBar">
+              <a href="/" class="navLink">HOME</a>
+              <a href="/#mainBox" class="navLink">NOTICIAS</a>
+              <a href="#footerSection" class="navLink">CONTATOS</a>
+            </nav>
+
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar noticia"
+                aria-label="Buscar"
+              />
+              <button
+                class="btn btn btn-outline-primary search-btn"
+                type="submit"
+              >
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <!-- MAIN -->
 
     <main id="mainBox">
-      <section class="sectionCards">
+      <section class="sectionCards" id="faculdade-card">
         <div class="cardBox">
           <div class="imgBox">
             <a href="/energia-eolica" class="linkImg"
               ><img
-                src="./imagens/imgEolica.jpeg"
+                src="/imagens/imgEolica.jpeg"
                 alt="imagem Noticia 1"
                 class="imgNoticia1"
             /></a>
           </div>
           <div class="descricaoBox">
             <p class="dataDescricao">Setembro 03,2023</p>
-            <a href="/energia-eolica" class="linkImg"
-              ><h2 class="tituloDescricao1">
-                Energia Eólica representa quase 27% da produção total do Brasil.
-              </h2></a
-            >
+            <h2 class="tituloDescricao1">
+              Energia Eólica representa quase 27% da produção total do Brasil.
+            </h2>
           </div>
         </div>
 
@@ -79,24 +99,22 @@
           <div class="imgBox">
             <a href="/real-madrid" class="linkImg"
               ><img
-                src="./imagens/imgChampion.jpg"
+                src="/imagens/imgChampion.jpg"
                 alt="imagem Noticia 2"
                 class="imgNoticia"
             /></a>
           </div>
           <div class="descricaoBox">
             <p class="dataDescricao">Abril 03,2024</p>
-            <a href="/real-madrid" class="linkImg"
-              ><h2 class="textDescricao">
-                Confira agora Real Madrid Campeão da Copa dos Campeões
-              </h2></a
-            >
+            <h2 class="textDescricao">
+              Confira agora Real Madrid Campeão da Copa dos Campeões
+            </h2>
           </div>
         </div>
 
         <div class="cardBox">
           <div class="imgBox">
-            <a href="mudancas-leis-trabalhistas" class="linkImg"
+            <a href="/mudancas-leis-trabalhistas" class="linkImg"
               ><img
                 src="./imagens/imgDinheiro.jpg"
                 alt="imagem Noticia 3"
@@ -105,11 +123,9 @@
           </div>
           <div class="descricaoBox">
             <p class="dataDescricao">Agosto 28,2023</p>
-            <a href="/mudancas-leis-trabalhistas" class="linkImg"
-              ><h2 class="textDescricao">
-                Confira agora as ultimas mudanças nas Leis trabalhistas
-              </h2></a
-            >
+            <h2 class="textDescricao">
+              Confira agora as ultimas mudanças nas Leis trabalhistas
+            </h2>
           </div>
         </div>
       </section>
@@ -117,8 +133,7 @@
       <section class="sectionCards">
         <div class="text">
           <p class="dataDescricao">Novembro 19,2023</p>
-
-          <h2 class="tituloDescricao">
+          <h2 class="tituloDescricao1">
             Faculdades não estão preenchendo as cotas especuladas de incrições
           </h2>
           <p class="descricaoText">
@@ -129,7 +144,7 @@
           </p>
         </div>
         <div class="text1">
-          <a href="cotas-de-faculdades" class="link"
+          <a href="/cotas-de-faculdades" class="link"
             >Ler Mais <i class="fi fi-rs-arrow-up-right detail"></i
           ></a>
         </div>
@@ -177,11 +192,12 @@
           </div>
         </div>
       </section>
-
-      <a href="#headerBox" class="return"
-        ><i class="fi fi-rr-arrow-small-up"></i
-      ></a>
-      <p class="copy">Site Criado por Lucas Caribé e Guilherme &copy;</p>
     </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
