@@ -45,9 +45,9 @@ public class JogoFisico extends Jogo{
 
     @Override
     public String toString() {
-        return super.toString() + '\t' +
-                quantidadeJogadores + '\t' +
-                tempoPartida + '\t';
+        return super.toString() +"\n" + "\t" +
+                 +quantidadeJogadores + "\n"+
+                "\t" + tempoPartida + "\n";
     }
 
     public int calcularTempoTotal(int quantidadePartidas){

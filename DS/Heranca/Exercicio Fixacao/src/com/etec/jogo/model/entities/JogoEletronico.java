@@ -44,9 +44,9 @@ public class JogoEletronico extends Jogo{
 
     @Override
     public String toString() {
-        return super.toString() + '\t' +
-                plataforma + '\t' +
-                genero;
+        return super.toString() +"\n" + "\t" +
+                 plataforma + "\n" +
+                "\t" + genero;
     }
 
     public String jogarOnline(int quantidadeJogadores){

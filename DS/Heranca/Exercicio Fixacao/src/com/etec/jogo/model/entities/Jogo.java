@@ -56,8 +56,8 @@ public class Jogo {
 
     @Override
     public String toString() {
-        return getNome() + '\t' +
-                preco + '\t' +
-                distribuidora;
+        return getNome() + "\n" +
+                "\t" + preco + "\n" +
+                "\t" +distribuidora;
     }
 }

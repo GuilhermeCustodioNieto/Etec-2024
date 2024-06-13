@@ -15,11 +15,15 @@ public class Main {
 
         ArrayList<Jogo> jogos = new ArrayList<Jogo>();
 
-        System.out.print("Deseja adicionar um jogo?");
+        System.out.print("Deseja adicionar um jogo? (s/n) ");
         boolean desejaRodar = scan.next().equalsIgnoreCase("s");
         while(desejaRodar){
             System.out.print("Digite o nome do jogo: ");
+            scan.nextLine();
+
             String nome = scan.nextLine();
+
+
 
             System.out.print("Digite o preço do jogo: ");
             double preco = scan.nextDouble();
@@ -49,15 +53,16 @@ public class Main {
                 jogos.add(new JogoEletronico(nome, preco, distribuidora, genero, plataforma));
             }
 
-            System.out.print("Deseja adicioonar outro jogo? ");
+            System.out.print("Deseja adicionar outro jogo? ");
             desejaRodar = scan.next().equalsIgnoreCase("s");
         }
 
         System.out.println("--------------------------------");
 
         System.out.println("JOGOS DA LOCADORA:");
-        for (Jogo jogo : jogos) {
-            jogo.toString();
+        for (Jogo jogo:
+             jogos) {
+            System.out.println(jogo.toString());
         }
     }
 }
