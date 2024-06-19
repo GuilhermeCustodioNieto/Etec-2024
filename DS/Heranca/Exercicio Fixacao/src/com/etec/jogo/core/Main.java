@@ -57,6 +57,7 @@ public class Main {
             desejaRodar = scan.next().equalsIgnoreCase("s");
         }
 
+
         System.out.println("--------------------------------");
 
         System.out.println("JOGOS DA LOCADORA:");
