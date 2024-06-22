@@ -11,13 +11,13 @@ router.use(
 
 router.use(express.json());
 
-const interceptador = function (req, res, next) {
-  var autenticado = false;
+var autenticado = false;
 
+const interceptador = function (req, res, next) {
   if (autenticado) {
     next();
   } else {
-    let file = path.resolve("./src/pages/error.html");
+    let file = path.resolve("./src/pages/login.html");
     res.sendFile(file);
   }
 };
@@ -44,8 +44,10 @@ router.post("/login", (req, res) => {
     req.body.name === "Guilherme Custódio Nieto" &&
     req.body.password === "22827496gA#"
   ) {
+    autenticado = true;
     res.redirect("/home");
   } else {
+    autenticado = false;
     res.redirect("/error");
   }
 });
