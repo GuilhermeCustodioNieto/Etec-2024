@@ -11,6 +11,19 @@ router.use(
 
 router.use(express.json());
 
+const interceptador = function (req, res, next) {
+  var autenticado = false;
+
+  if (autenticado) {
+    next();
+  } else {
+    let file = path.resolve("./src/pages/error.html");
+    res.sendFile(file);
+  }
+};
+
+router.use(interceptador);
+
 router.get("/", (req, res) => {
   let index = path.resolve("./src/pages/index.html");
   res.sendFile(index);
