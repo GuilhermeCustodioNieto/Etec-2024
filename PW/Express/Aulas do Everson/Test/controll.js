@@ -11,32 +11,33 @@ router.use(
 
 router.use(express.json());
 
-var autenticado = false;
+var autenticado = true;
 
 const interceptador = function (req, res, next) {
   if (autenticado) {
     next();
   } else {
-    let file = path.resolve("./src/pages/login.html");
-    res.sendFile(file);
+    res.redirect("/login");
   }
 };
 
 router.use(interceptador);
 
+let user = {
+  name: "",
+  password: "",
+};
+
 router.get("/", (req, res) => {
-  let index = path.resolve("./src/pages/index.html");
-  res.sendFile(index);
+  res.render("index");
 });
 
 router.get("/error", (req, res) => {
-  let file = path.resolve("./src/pages/error.html");
-  res.sendFile(file);
+  res.render("error");
 });
 
 router.get("/login", (req, res) => {
-  let file = path.resolve("./src/pages/login.html");
-  res.sendFile(file);
+  res.render("login");
 });
 
 router.post("/login", (req, res) => {
@@ -44,17 +45,18 @@ router.post("/login", (req, res) => {
     req.body.name === "Guilherme Custódio Nieto" &&
     req.body.password === "22827496gA#"
   ) {
+    user["name"] = req.body.name;
+    user["password"] = req.body.password;
     autenticado = true;
-    res.redirect("/home");
+    res.render("home", { user: user });
   } else {
     autenticado = false;
-    res.redirect("/error");
+    res.render("error");
   }
 });
 
 router.get("/home", (req, res) => {
-  let file = path.resolve("./src/pages/home.html");
-  res.sendFile(file);
+  res.render("home");
 });
 
 export default router;
