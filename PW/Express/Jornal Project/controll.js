@@ -12,27 +12,51 @@ router.use(
 router.use(express.json());
 
 router.get(`/`, (req, res) => {
-  res.render("index");
+  let pagina = {
+    tituloRevista: "Revista GL",
+  };
+
+  res.render("index", { pagina: pagina });
 });
 
 router.get(`/energia-eolica`, (req, res) => {
-  res.render("pg1");
+  let pagina = {
+    tituloRevista: "Página 1",
+  };
+
+  res.render("pg1", { pagina: pagina });
 });
 
 router.get(`/real-madrid`, (req, res) => {
-  res.render("pg2");
+  let pagina = {
+    tituloRevista: "Página 2",
+  };
+
+  res.render("pg2", { pagina: pagina });
 });
 
 router.get(`/mudancas-leis-trabalhistas`, (req, res) => {
-  res.render("pg3");
+  let pagina = {
+    tituloRevista: "Página 3",
+  };
+
+  res.render("pg3", { pagina: pagina });
 });
 
 router.get(`/cotas-de-faculdades`, (req, res) => {
-  res.render("pg4");
+  let pagina = {
+    tituloRevista: "Página 4",
+  };
+
+  res.render("pg4", { pagina: pagina });
 });
 
 router.get(`/coreia-do-norte`, (req, res) => {
-  res.render("pg5");
+  let pagina = {
+    tituloRevista: "Página 5",
+  };
+
+  res.render("pg5", { pagina: pagina });
 });
 
 export default router;
