@@ -23,7 +23,6 @@ CREATE TABLE tbVeiculo(
 
 	PRIMARY KEY(idVeiculo),
 
-
 )
 
 CREATE TABLE tbMultas(
@@ -39,6 +38,7 @@ CREATE TABLE tbMultas(
 
 SELECT * FROM tbMotorista
 SELECT * FROM tbVeiculo
+SELECT * FROM tbMultas
 
 DROP TABLE tbVeiculo
 DROP TABLE tbMotorista
