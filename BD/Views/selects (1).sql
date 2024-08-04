@@ -1,4 +1,4 @@
-use db_EscolaIdiomas;
+USE db_EscolaIdiomas;
 
 -- Exercício 1
 CREATE VIEW Preco_Baixo AS
@@ -6,8 +6,8 @@ CREATE VIEW Preco_Baixo AS
 		WHERE  valorCurso < (SELECT AVG(valorCurso) FROM tbl_curso)
 
 -- Exercício 2
-SELECT nomeCurso FROM Preco_Baixo
-ORDER BY cargaHorariaCurso 
+SELECT * FROM Preco_Baixo
+	ORDER BY cargaHorariaCurso 
 
 -- Exercício 3
 CREATE VIEW Alunos_Turma AS
@@ -18,12 +18,12 @@ CREATE VIEW Alunos_Turma AS
 	GROUP BY tbl_curso.nomeCurso, tbl_turma.nomeTurma, tbl_turma.codTurma
 	
 -- Exercício 4
-SELECT nomeTurma FROM Alunos_Turma
+SELECT nomeTurma, quantidade_alunos FROM Alunos_Turma
 	WHERE quantidade_alunos = (SELECT MAX(quantidade_alunos) FROM Alunos_Turma)
 
 -- Exercício 5
 CREATE VIEW Turma_Curso AS
-	SELECT tbl_curso.nomeCurso, COUNT(tbl_turma.codCurso) as quantidade_turmas FROM tbl_curso
+	SELECT tbl_curso.nomeCurso, COUNT(tbl_turma.codTurma) as quantidade_turmas FROM tbl_curso
 		INNER JOIN tbl_turma ON tbl_turma.codCurso = tbl_curso.codCurso
 
 
