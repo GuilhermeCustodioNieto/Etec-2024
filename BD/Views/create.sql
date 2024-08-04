@@ -1,5 +1,7 @@
 CREATE DATABASE db_EscolaIdiomas
- 
+
+USE db_EscolaIdiomas
+
 CREATE TABLE tbl_aluno(
     codAluno INT PRIMARY KEY IDENTITY(1,1),
     nomeAluno VARCHAR(250) NOT NULL,
