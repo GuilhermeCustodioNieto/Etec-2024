@@ -88,7 +88,7 @@ END
 EXEC spInsereAlunos'Paulo Santos', '2000-03-10 00:00:00', '82.282.122-0', 'SP'
 
 -- Exercício 7:  Criar uma stored procedure que receba o nome do curso e o nome do aluno e matricule o mesmo no curso pretendido
-CREATE PROCEDURE spMatriculaAluno 
+ALTER PROCEDURE spMatriculaAluno 
 @nomeCurso VARCHAR(255),
 @nomeAluno VARCHAR(255)
 AS
@@ -96,22 +96,25 @@ BEGIN
 	DECLARE @codAluno INT
 	DECLARE @codTurma INT
 
-	SET @codAluno = (SELECT TOP 1 codAluno FROM tbAluno WHERE nomeAluno = @nomeAluno)
+	SET @codAluno = (SELECT TOP 1 codAluno FROM tbAluno WHERE nomeAluno LIKE @nomeAluno)
 	SET @codTurma = (SELECT TOP 1 codTurma FROM tbTurma 
 		INNER JOIN tbCurso ON tbTurma.codCurso = tbCurso.codCurso
-		WHERE tbCurso.nomeCurso = @nomeCurso)
+		WHERE nomeCurso LIKE @nomeCurso)
 
-	IF @codAluno != NULL AND @codTurma != NULL
+	IF @codAluno != NULL
 	BEGIN
-		INSERT INTO tbMatricula(codAluno, codTurma, dataMatricula) VALUES
-			(@codAluno, @codTurma, GETDATE())
+		PRINT('Foi encontrado um aluno matriculado no curso. Matricula incompleta')
 	END
 	ELSE
 	BEGIN
-		PRINT('Não foi encontrado nenhum aluno ou turma voltada para o curso informado.')
+		INSERT INTO tbMatricula(codAluno, codTurma, dataMatricula) VALUES
+			(@codAluno, @codTurma, GETDATE())
+
+		PRINT('O aluno ' + @nomeAluno + ' foi cadastrado com sucesso')
+		
 	END
 END
 
-EXEC spMatriculaAluno 'Inglês', 'Paulo Santos'
+EXEC spMatriculaAluno 'Inglês', 'Gilson Barros Silva'
 
 -- OBS: Devido a ter a possibilidade de existir mais de uma turma que faz determinado tipo de curso (como duas turmas que fazem curso de inglês) eu fiz com que o SQL pegue apenas a primeira turma que aparecer
