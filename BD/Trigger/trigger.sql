@@ -8,7 +8,7 @@ CREATE TRIGGER tgAtualizaQuantidade
 		SET @quantidadeProduto = (SELECT quantidadeItensVenda FROM inserted)
 		set @produto = (SELECT codProduto FROM inserted)
 
-		UPDATE tbProduto SET quantidade = @quantidadeProduto + quantidade WHERE codProduto = @produto
+		UPDATE tbProduto SET quantidade = @quantidadeProduto - quantidade WHERE codProduto = @produto
 	END
 
 CREATE TRIGGER tbAumentaQuantidadeProdutos
