@@ -1,4 +1,8 @@
+DROP DATABASE IF EXISTS db_estoque
+
 CREATE DATABASE db_estoque
+
+
 
 USE db_estoque
 
