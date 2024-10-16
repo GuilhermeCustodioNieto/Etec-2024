@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ffedea;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+header{
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family: "Happy Monkey", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: #df9489;
+}
+
+.dados{
+    margin: 10px;
+}
+
+#dados-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 15px;
+    gap: 10px;
+}
+
+.text, h2{
+    font-size: 25px;
+    color: #8d5951;
+    font-family: "Happy Monkey", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#lados{
+    border-radius: 10px;
+    padding: 5px;
+    border: solid 2px #8d5951;
+    font-size: 15px;
+    color: #8d5951;
+    background-color: #ffedea;
+    text-align: center;
+}
+
+.btn{
+    border: solid 2px #8d5951;
+    background-color: hsl(8, 100%, 94%);
+    font-family: "Happy Monkey", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    color: #df9489;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.forma-geometrica{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+
+}
+
+#dados{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    font-family: "Happy Monkey", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: #cf897e;
+}
+
+.imgs{
+    height: 200px;
+    width: 200px;
+}
