@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from "react-native";
 
 const App = () => {
   const [name, setName] = useState("");
@@ -21,51 +21,81 @@ const App = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Formulário de Cadastro</Text>
+    <View style={styles.body}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Cadastro</Text>
+        <Text>Crie sua conta e comece a fazer suas tarefas</Text>
 
-      <TextInput
-        style={styles.input}
-        placeholder="Nome"
-        value={name}
-        onChangeText={setName}
-      />
+        <View>
+          <TextInput
+            style={styles.input}
+            placeholder="Nome"
+            value={name}
+            onChangeText={setName}
+          />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Endereço"
-        value={address}
-        onChangeText={setAddress}
-      />
+          <TextInput
+            style={styles.input}
+            placeholder="Endereço"
+            value={address}
+            onChangeText={setAddress}
+          />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Email"
-        value={email}
-        onChangeText={setEmail}
-        keyboardType="email-address"
-      />
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+            keyboardType="email-address"
+          />
 
-      <TextInput
-        style={styles.input}
-        placeholder="Telefone"
-        value={phone}
-        onChangeText={setPhone}
-        keyboardType="phone-pad"
-      />
+          <TextInput
+            style={styles.input}
+            placeholder="Telefone"
+            value={phone}
+            onChangeText={setPhone}
+            keyboardType="phone-pad"
+          />
+        </View>
 
-      <Button title="Enviar" onPress={handleSubmit} />
-      <Button title="Resetar" onPress={handleReset} color="#FF6347" />
+        <View style={styles.flexbox}>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Cadastrar</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Limpar</Text>
+            </TouchableOpacity>
+        </View>
+
+        <Text style={styles.miniLink}>Fazer login</Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  body: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100vw',
+    height: '100vh',
+    backgroundColor: '#EBFBFF',
+
+  },
+
   container: {
-    flex: 1,
-    justifyContent: "center",
+    display: 'flex',
     alignItems: "center",
-    backgroundColor: "#f5f5f5",
+    justifyContent: 'space-evenly',
+    backgroundColor: "#FFF",
+    width: '40vw',
+    height: '80vh',
+    padding: '20px',
+    borderRadius: '10px',
+
   },
 
   title: {
@@ -80,8 +110,33 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 15,
     paddingHorizontal: 10,
-    width: "80%",
+    width: "20vw",
   },
+
+  button: {
+    margin: '20px',
+    color: '#fff',
+    backgroundColor: '#00C8FF',
+    padding: '10px',
+    borderRadius:'5px',
+    borderBlockColor: '#000',
+  },
+
+  buttonText: {
+    fontWeight: '600',
+  },
+
+  flexbox: {
+    display: 'flex',  
+    flexDirection: 'row'
+  },
+
+  miniLink: {
+    fontWeight: '600',
+    textDecorationLine: 'underline',
+    fontSize: '15px',
+  }
+
 });
 
 export default App;
